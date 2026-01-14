@@ -25,6 +25,12 @@ void print_vector(const std::string msg, double *data, int size)
     }
     fmt::println("]");
 }
+
+void multiplicar_matriz(double *A, double* x, double *b, int rows, int cols)
+{
+    
+}
+
 int main(int argv, char **argc)
 {
     MPI_Init(&argv, &argc);
@@ -79,16 +85,6 @@ int main(int argv, char **argc)
     }
     A_local = std::make_unique<double[]>(rows_per_rank * MATRIX_DIM);
     b_local = std::make_unique<double[]>(rows_per_rank);
-
-    if (rank == 1)
-    {
-        print_vector("rank_1, Antes vector x: ", x.get(), MATRIX_DIM );
-    }
-
-    if (rank == 2)
-    {
-        print_vector("rank_2, Antes vector x: ", x.get(), MATRIX_DIM );
-    }
     // enviar los datos
     // enviar el vector x a todos los RANKS
     MPI_Bcast(x.get(),         // datos
@@ -96,15 +92,36 @@ int main(int argv, char **argc)
               MPI_DOUBLE,      // tipo de dato que enviamos
               0,               // rank de origen, quien envia
               MPI_COMM_WORLD); // grupo
-    if (rank == 1)
-    {
-        print_vector("rank_1, Despues vector x: ", x.get(), MATRIX_DIM );
-    }
-    if (rank == 2)
-    {
-        print_vector("rank_2, Despues vector x: ", x.get(), MATRIX_DIM );
+                               // auto msg = fmt::format("Rank_{} antes: ", rank);
+    // print_vector(msg,A_local.get(),2*MATRIX_DIM);
+
+    // enviar los bloques de la matriz A a cada RANK A --> 7X25
+    MPI_Scatter(A.get(),                    // datos a enviar
+                rows_per_rank * MATRIX_DIM, // cuantos datos por RANK
+                MPI_DOUBLE,                 // tipo de dato de envio
+                A_local.get(),              // donde se reciben los datos
+                rows_per_rank * MATRIX_DIM, // cuantos datos recibo
+                MPI_DOUBLE,                 // tipo de dato que recibo
+                0,                          // rank que envia
+                MPI_COMM_WORLD);            // grupo
+
+    // msg = fmt::format("Rank_{} despues: ", rank);
+    // print_vector(msg,A_local.get(),2*MATRIX_DIM);
+    // multiplicar las matrices: A_local * x = b (7 elementos)
+    // multiplicar A_local.get(), x.get() , blocal.get(), rows_per_rank, MATRIX_DIM)
+    for(int i = 0; i<rows_per_rank; i++){
+        b_local[i] =rank* 10;
     }
 
-    MPI_Finalize();
+    // Enviar el resltado parcial al rank_0
+    MPI_Gather(b_local.get(), rows_per_rank, MPI_DOUBLE, // Envio de datos
+               b.get(), rows_per_rank, MPI_DOUBLE,       // Recepcion de datos
+               0, // rank que recibe
+               MPI_COMM_WORLD);
+    if(rank==0){
+        print_vector("Resultado final b",b.get(),MATRIX_DIM);
+    }
+
+    MPI_Finalize(); 
     return 0;
 }
