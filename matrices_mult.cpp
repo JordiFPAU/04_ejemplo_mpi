@@ -28,6 +28,15 @@ void print_vector(const std::string msg, double *data, int size)
 
 void multiplicar_matriz(double *A, double* x, double *b, int rows, int cols)
 {
+    for (int i = 0; i < rows; i++)
+    {
+        b[i] = 0;
+        for (int j = 0; j < cols; j++)
+        {
+            int index = i * cols + j;
+            b[i] += A[index] * x[j];
+        }
+    }
     
 }
 
@@ -107,12 +116,9 @@ int main(int argv, char **argc)
 
     // msg = fmt::format("Rank_{} despues: ", rank);
     // print_vector(msg,A_local.get(),2*MATRIX_DIM);
-    // multiplicar las matrices: A_local * x = b (7 elementos)
+    // multiplicar las matrices: A_local * x = b (7 elementos) 
     // multiplicar A_local.get(), x.get() , blocal.get(), rows_per_rank, MATRIX_DIM)
-    for(int i = 0; i<rows_per_rank; i++){
-        b_local[i] =rank* 10;
-    }
-
+    multiplicar_matriz(A_local.get(), x.get(), b_local.get(), rows_per_rank, MATRIX_DIM);
     // Enviar el resltado parcial al rank_0
     MPI_Gather(b_local.get(), rows_per_rank, MPI_DOUBLE, // Envio de datos
                b.get(), rows_per_rank, MPI_DOUBLE,       // Recepcion de datos

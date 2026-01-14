@@ -65,7 +65,7 @@ build Release/ejemplo_mpi.exe: CXX_EXECUTABLE_LINKER__ejemplo_mpi_Release CMakeF
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = C:/tools/vcpkg/installed/x64-mingw-dynamic/lib/libfmt.dll.a  C:/oneAPI/mpi/latest/lib/impi.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ejemplo_mpi.dir\Release
-  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\tools\prog_paralela\04_ejemplo_mpi\build && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/tools/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/tools/prog_paralela/04_ejemplo_mpi/build/Release/ejemplo_mpi.exe -installedDir C:/tools/vcpkg/installed/x64-mingw-dynamic/bin -OutVariable out"
+  POST_BUILD = C:\Windows\system32\cmd.exe /C "cd /D C:\tools\prog_paralela\04_ejemplo_mpi\build && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/tools/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/tools/prog_paralela/04_ejemplo_mpi/build/Release/ejemplo_mpi.exe -installedDir C:/tools/vcpkg/installed/x64-mingw-dynamic/bin -OutVariable out"
   PRE_LINK = cd .
   TARGET_FILE = Release\ejemplo_mpi.exe
   TARGET_IMPLIB = Release\libejemplo_mpi.dll.a
@@ -102,7 +102,7 @@ build Release/matrices_mult.exe: CXX_EXECUTABLE_LINKER__matrices_mult_Release CM
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = C:/tools/vcpkg/installed/x64-mingw-dynamic/lib/libfmt.dll.a  C:/oneAPI/mpi/latest/lib/impi.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\matrices_mult.dir\Release
-  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\tools\prog_paralela\04_ejemplo_mpi\build && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/tools/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/tools/prog_paralela/04_ejemplo_mpi/build/Release/matrices_mult.exe -installedDir C:/tools/vcpkg/installed/x64-mingw-dynamic/bin -OutVariable out"
+  POST_BUILD = C:\Windows\system32\cmd.exe /C "cd /D C:\tools\prog_paralela\04_ejemplo_mpi\build && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/tools/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/tools/prog_paralela/04_ejemplo_mpi/build/Release/matrices_mult.exe -installedDir C:/tools/vcpkg/installed/x64-mingw-dynamic/bin -OutVariable out"
   PRE_LINK = cd .
   TARGET_FILE = Release\matrices_mult.exe
   TARGET_IMPLIB = Release\libmatrices_mult.dll.a
