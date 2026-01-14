@@ -1,3 +1,15 @@
 # ninja log v7
-11	1123	7900430011782391	CMakeFiles/ejemplo_mpi.dir/Debug/main.cpp.obj	d911dfd2afb6319b
-1124	6093	7900430022903177	Debug/ejemplo_mpi.exe	5de81ea9ca62f453
+52	1779	7900976008785008	CMakeFiles/ejemplo_mpi.dir/Debug/main.cpp.obj	d911dfd2afb6319b
+1779	3853	7900976026061949	Debug/ejemplo_mpi.exe	c7d9f483fb4782b
+55	1772	7900976008825130	CMakeFiles/matrices_mult.dir/Debug/main.cpp.obj	68437e345d0c8ab
+1772	3852	7900976025984785	Debug/matrices_mult.exe	f95ed2ac7e3eacfe
+43	1437	7900985485836279	CMakeFiles/matrices_mult.dir/Debug/matrices_mult.cpp.obj	f69af6c477faa8ab
+1439	2133	7900985499795730	Debug/matrices_mult.exe	77fadfb470a3c902
+29	1382	7900988125818256	CMakeFiles/matrices_mult.dir/Debug/matrices_mult.cpp.obj	f69af6c477faa8ab
+1383	2115	7900988139353472	Debug/matrices_mult.exe	77fadfb470a3c902
+26	1402	7901001750968709	CMakeFiles/matrices_mult.dir/Debug/matrices_mult.cpp.obj	f69af6c477faa8ab
+1402	2146	7901001764726870	Debug/matrices_mult.exe	77fadfb470a3c902
+26	1462	7901002290287101	CMakeFiles/matrices_mult.dir/Debug/matrices_mult.cpp.obj	f69af6c477faa8ab
+1463	2187	7901002304656981	Debug/matrices_mult.exe	77fadfb470a3c902
+22	1452	7901002967466403	CMakeFiles/matrices_mult.dir/Debug/matrices_mult.cpp.obj	f69af6c477faa8ab
+1453	2188	7901002981781498	Debug/matrices_mult.exe	77fadfb470a3c902

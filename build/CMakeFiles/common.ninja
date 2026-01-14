@@ -84,19 +84,19 @@ build CMakeFiles/cmake_byproducts_for_clean_target: phony
 #############################################
 # Clean byproducts.
 
-build CMakeFiles/cmake_byproducts_for_clean_target$:Debug: phony Debug/ejemplo_mpi.exe
+build CMakeFiles/cmake_byproducts_for_clean_target$:Debug: phony Debug/ejemplo_mpi.exe Debug/matrices_mult.exe
 
 
 #############################################
 # Clean byproducts.
 
-build CMakeFiles/cmake_byproducts_for_clean_target$:Release: phony Release/ejemplo_mpi.exe
+build CMakeFiles/cmake_byproducts_for_clean_target$:Release: phony Release/ejemplo_mpi.exe Release/matrices_mult.exe
 
 
 #############################################
 # Clean byproducts.
 
-build CMakeFiles/cmake_byproducts_for_clean_target$:RelWithDebInfo: phony RelWithDebInfo/ejemplo_mpi.exe
+build CMakeFiles/cmake_byproducts_for_clean_target$:RelWithDebInfo: phony RelWithDebInfo/ejemplo_mpi.exe RelWithDebInfo/matrices_mult.exe
 
 
 #############################################

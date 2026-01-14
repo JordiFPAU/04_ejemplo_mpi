@@ -71,15 +71,56 @@ build Release/ejemplo_mpi.exe: CXX_EXECUTABLE_LINKER__ejemplo_mpi_Release CMakeF
   TARGET_IMPLIB = Release\libejemplo_mpi.dll.a
   TARGET_PDB = ejemplo_mpi.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target matrices_mult
+
+
+#############################################
+# Order-only phony target for matrices_mult
+
+build cmake_object_order_depends_target_matrices_mult_RELEASE: phony || .
+
+build CMakeFiles/matrices_mult.dir/Release/matrices_mult.cpp.obj: CXX_COMPILER__matrices_mult_unscanned_Release C$:/tools/prog_paralela/04_ejemplo_mpi/matrices_mult.cpp || cmake_object_order_depends_target_matrices_mult_RELEASE
+  CONFIG = Release
+  DEFINES = -DFMT_SHARED -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles\matrices_mult.dir\Release\matrices_mult.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG
+  INCLUDES = -IC:/oneAPI/mpi/latest/include -isystem C:/tools/vcpkg/installed/x64-mingw-dynamic/include
+  OBJECT_DIR = CMakeFiles\matrices_mult.dir\Release
+  OBJECT_FILE_DIR = CMakeFiles\matrices_mult.dir\Release
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target matrices_mult
+
+
+#############################################
+# Link the executable Release\matrices_mult.exe
+
+build Release/matrices_mult.exe: CXX_EXECUTABLE_LINKER__matrices_mult_Release CMakeFiles/matrices_mult.dir/Release/matrices_mult.cpp.obj | C$:/tools/vcpkg/installed/x64-mingw-dynamic/lib/libfmt.dll.a C$:/oneAPI/mpi/latest/lib/impi.lib
+  CONFIG = Release
+  FLAGS = -O3 -DNDEBUG
+  LINK_LIBRARIES = C:/tools/vcpkg/installed/x64-mingw-dynamic/lib/libfmt.dll.a  C:/oneAPI/mpi/latest/lib/impi.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\matrices_mult.dir\Release
+  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\tools\prog_paralela\04_ejemplo_mpi\build && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/tools/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/tools/prog_paralela/04_ejemplo_mpi/build/Release/matrices_mult.exe -installedDir C:/tools/vcpkg/installed/x64-mingw-dynamic/bin -OutVariable out"
+  PRE_LINK = cd .
+  TARGET_FILE = Release\matrices_mult.exe
+  TARGET_IMPLIB = Release\libmatrices_mult.dll.a
+  TARGET_PDB = matrices_mult.exe.dbg
+
 build ejemplo_mpi.exe$:Release: phony Release/ejemplo_mpi.exe
 
 build ejemplo_mpi$:Release: phony Release/ejemplo_mpi.exe
+
+build matrices_mult.exe$:Release: phony Release/matrices_mult.exe
+
+build matrices_mult$:Release: phony Release/matrices_mult.exe
 
 
 #############################################
 # Folder: C:/tools/prog_paralela/04_ejemplo_mpi/build
 
-build all$:Release: phony Release/ejemplo_mpi.exe
+build all$:Release: phony Release/ejemplo_mpi.exe Release/matrices_mult.exe
 
 
 #############################################

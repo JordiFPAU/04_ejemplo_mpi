@@ -71,15 +71,56 @@ build Debug/ejemplo_mpi.exe: CXX_EXECUTABLE_LINKER__ejemplo_mpi_Debug CMakeFiles
   TARGET_IMPLIB = Debug\libejemplo_mpi.dll.a
   TARGET_PDB = ejemplo_mpi.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target matrices_mult
+
+
+#############################################
+# Order-only phony target for matrices_mult
+
+build cmake_object_order_depends_target_matrices_mult_DEBUG: phony || .
+
+build CMakeFiles/matrices_mult.dir/Debug/matrices_mult.cpp.obj: CXX_COMPILER__matrices_mult_unscanned_Debug C$:/tools/prog_paralela/04_ejemplo_mpi/matrices_mult.cpp || cmake_object_order_depends_target_matrices_mult_DEBUG
+  CONFIG = Debug
+  DEFINES = -DFMT_SHARED -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\matrices_mult.dir\Debug\matrices_mult.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/oneAPI/mpi/latest/include -isystem C:/tools/vcpkg/installed/x64-mingw-dynamic/include
+  OBJECT_DIR = CMakeFiles\matrices_mult.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\matrices_mult.dir\Debug
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target matrices_mult
+
+
+#############################################
+# Link the executable Debug\matrices_mult.exe
+
+build Debug/matrices_mult.exe: CXX_EXECUTABLE_LINKER__matrices_mult_Debug CMakeFiles/matrices_mult.dir/Debug/matrices_mult.cpp.obj | C$:/tools/vcpkg/installed/x64-mingw-dynamic/debug/lib/libfmtd.dll.a C$:/oneAPI/mpi/latest/lib/impi.lib
+  CONFIG = Debug
+  FLAGS = -g
+  LINK_LIBRARIES = C:/tools/vcpkg/installed/x64-mingw-dynamic/debug/lib/libfmtd.dll.a  C:/oneAPI/mpi/latest/lib/impi.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\matrices_mult.dir\Debug
+  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\tools\prog_paralela\04_ejemplo_mpi\build && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/tools/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/tools/prog_paralela/04_ejemplo_mpi/build/Debug/matrices_mult.exe -installedDir C:/tools/vcpkg/installed/x64-mingw-dynamic/debug/bin -OutVariable out"
+  PRE_LINK = cd .
+  TARGET_FILE = Debug\matrices_mult.exe
+  TARGET_IMPLIB = Debug\libmatrices_mult.dll.a
+  TARGET_PDB = matrices_mult.exe.dbg
+
 build ejemplo_mpi.exe$:Debug: phony Debug/ejemplo_mpi.exe
 
 build ejemplo_mpi$:Debug: phony Debug/ejemplo_mpi.exe
+
+build matrices_mult.exe$:Debug: phony Debug/matrices_mult.exe
+
+build matrices_mult$:Debug: phony Debug/matrices_mult.exe
 
 
 #############################################
 # Folder: C:/tools/prog_paralela/04_ejemplo_mpi/build
 
-build all$:Debug: phony Debug/ejemplo_mpi.exe
+build all$:Debug: phony Debug/ejemplo_mpi.exe Debug/matrices_mult.exe
 
 
 #############################################

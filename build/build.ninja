@@ -9,6 +9,10 @@ build ejemplo_mpi: phony Debug/ejemplo_mpi.exe
 
 build ejemplo_mpi.exe: phony Debug/ejemplo_mpi.exe
 
+build matrices_mult: phony Debug/matrices_mult.exe
+
+build matrices_mult.exe: phony Debug/matrices_mult.exe
+
 
 #############################################
 # Folder: C:/tools/prog_paralela/04_ejemplo_mpi/build

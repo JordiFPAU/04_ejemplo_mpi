@@ -71,15 +71,56 @@ build RelWithDebInfo/ejemplo_mpi.exe: CXX_EXECUTABLE_LINKER__ejemplo_mpi_RelWith
   TARGET_IMPLIB = RelWithDebInfo\libejemplo_mpi.dll.a
   TARGET_PDB = ejemplo_mpi.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target matrices_mult
+
+
+#############################################
+# Order-only phony target for matrices_mult
+
+build cmake_object_order_depends_target_matrices_mult_RELWITHDEBINFO: phony || .
+
+build CMakeFiles/matrices_mult.dir/RelWithDebInfo/matrices_mult.cpp.obj: CXX_COMPILER__matrices_mult_unscanned_RelWithDebInfo C$:/tools/prog_paralela/04_ejemplo_mpi/matrices_mult.cpp || cmake_object_order_depends_target_matrices_mult_RELWITHDEBINFO
+  CONFIG = RelWithDebInfo
+  DEFINES = -DFMT_SHARED -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles\matrices_mult.dir\RelWithDebInfo\matrices_mult.cpp.obj.d
+  FLAGS = -O2 -g -DNDEBUG
+  INCLUDES = -IC:/oneAPI/mpi/latest/include -isystem C:/tools/vcpkg/installed/x64-mingw-dynamic/include
+  OBJECT_DIR = CMakeFiles\matrices_mult.dir\RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles\matrices_mult.dir\RelWithDebInfo
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target matrices_mult
+
+
+#############################################
+# Link the executable RelWithDebInfo\matrices_mult.exe
+
+build RelWithDebInfo/matrices_mult.exe: CXX_EXECUTABLE_LINKER__matrices_mult_RelWithDebInfo CMakeFiles/matrices_mult.dir/RelWithDebInfo/matrices_mult.cpp.obj | C$:/tools/vcpkg/installed/x64-mingw-dynamic/lib/libfmt.dll.a C$:/oneAPI/mpi/latest/lib/impi.lib
+  CONFIG = RelWithDebInfo
+  FLAGS = -O2 -g -DNDEBUG
+  LINK_LIBRARIES = C:/tools/vcpkg/installed/x64-mingw-dynamic/lib/libfmt.dll.a  C:/oneAPI/mpi/latest/lib/impi.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\matrices_mult.dir\RelWithDebInfo
+  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\tools\prog_paralela\04_ejemplo_mpi\build && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/tools/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/tools/prog_paralela/04_ejemplo_mpi/build/RelWithDebInfo/matrices_mult.exe -installedDir C:/tools/vcpkg/installed/x64-mingw-dynamic/bin -OutVariable out"
+  PRE_LINK = cd .
+  TARGET_FILE = RelWithDebInfo\matrices_mult.exe
+  TARGET_IMPLIB = RelWithDebInfo\libmatrices_mult.dll.a
+  TARGET_PDB = matrices_mult.exe.dbg
+
 build ejemplo_mpi.exe$:RelWithDebInfo: phony RelWithDebInfo/ejemplo_mpi.exe
 
 build ejemplo_mpi$:RelWithDebInfo: phony RelWithDebInfo/ejemplo_mpi.exe
+
+build matrices_mult.exe$:RelWithDebInfo: phony RelWithDebInfo/matrices_mult.exe
+
+build matrices_mult$:RelWithDebInfo: phony RelWithDebInfo/matrices_mult.exe
 
 
 #############################################
 # Folder: C:/tools/prog_paralela/04_ejemplo_mpi/build
 
-build all$:RelWithDebInfo: phony RelWithDebInfo/ejemplo_mpi.exe
+build all$:RelWithDebInfo: phony RelWithDebInfo/ejemplo_mpi.exe RelWithDebInfo/matrices_mult.exe
 
 
 #############################################

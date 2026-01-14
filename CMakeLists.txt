@@ -23,3 +23,10 @@ target_link_libraries(ejemplo_mpi PRIVATE
     fmt::fmt
     ${MPI_LIB}/impi.lib
     )
+
+add_executable(matrices_mult matrices_mult.cpp)
+ 
+target_link_libraries(matrices_mult PRIVATE
+    fmt::fmt
+    ${MPI_LIB}/impi.lib
+    )

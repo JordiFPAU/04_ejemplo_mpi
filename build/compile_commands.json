@@ -16,5 +16,23 @@
   "command": "C:\\tools\\mingw64\\bin\\g++.exe -DFMT_SHARED -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -IC:/oneAPI/mpi/latest/include -isystem C:/tools/vcpkg/installed/x64-mingw-dynamic/include -O2 -g -DNDEBUG -o CMakeFiles\\ejemplo_mpi.dir\\RelWithDebInfo\\main.cpp.obj -c C:\\tools\\prog_paralela\\04_ejemplo_mpi\\main.cpp",
   "file": "C:/tools/prog_paralela/04_ejemplo_mpi/main.cpp",
   "output": "C:/tools/prog_paralela/04_ejemplo_mpi/build/CMakeFiles/ejemplo_mpi.dir/RelWithDebInfo/main.cpp.obj"
+},
+{
+  "directory": "C:/tools/prog_paralela/04_ejemplo_mpi/build",
+  "command": "C:\\tools\\mingw64\\bin\\g++.exe -DFMT_SHARED -DCMAKE_INTDIR=\\\"Debug\\\" -IC:/oneAPI/mpi/latest/include -isystem C:/tools/vcpkg/installed/x64-mingw-dynamic/include -g -o CMakeFiles\\matrices_mult.dir\\Debug\\matrices_mult.cpp.obj -c C:\\tools\\prog_paralela\\04_ejemplo_mpi\\matrices_mult.cpp",
+  "file": "C:/tools/prog_paralela/04_ejemplo_mpi/matrices_mult.cpp",
+  "output": "C:/tools/prog_paralela/04_ejemplo_mpi/build/CMakeFiles/matrices_mult.dir/Debug/matrices_mult.cpp.obj"
+},
+{
+  "directory": "C:/tools/prog_paralela/04_ejemplo_mpi/build",
+  "command": "C:\\tools\\mingw64\\bin\\g++.exe -DFMT_SHARED -DCMAKE_INTDIR=\\\"Release\\\" -IC:/oneAPI/mpi/latest/include -isystem C:/tools/vcpkg/installed/x64-mingw-dynamic/include -O3 -DNDEBUG -o CMakeFiles\\matrices_mult.dir\\Release\\matrices_mult.cpp.obj -c C:\\tools\\prog_paralela\\04_ejemplo_mpi\\matrices_mult.cpp",
+  "file": "C:/tools/prog_paralela/04_ejemplo_mpi/matrices_mult.cpp",
+  "output": "C:/tools/prog_paralela/04_ejemplo_mpi/build/CMakeFiles/matrices_mult.dir/Release/matrices_mult.cpp.obj"
+},
+{
+  "directory": "C:/tools/prog_paralela/04_ejemplo_mpi/build",
+  "command": "C:\\tools\\mingw64\\bin\\g++.exe -DFMT_SHARED -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -IC:/oneAPI/mpi/latest/include -isystem C:/tools/vcpkg/installed/x64-mingw-dynamic/include -O2 -g -DNDEBUG -o CMakeFiles\\matrices_mult.dir\\RelWithDebInfo\\matrices_mult.cpp.obj -c C:\\tools\\prog_paralela\\04_ejemplo_mpi\\matrices_mult.cpp",
+  "file": "C:/tools/prog_paralela/04_ejemplo_mpi/matrices_mult.cpp",
+  "output": "C:/tools/prog_paralela/04_ejemplo_mpi/build/CMakeFiles/matrices_mult.dir/RelWithDebInfo/matrices_mult.cpp.obj"
 }
 ]
