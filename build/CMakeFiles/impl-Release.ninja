@@ -51,8 +51,6 @@ build CMakeFiles/ejemplo_mpi.dir/Release/main.cpp.obj: CXX_COMPILER__ejemplo_mpi
   INCLUDES = -IC:/oneAPI/mpi/latest/include -isystem C:/tools/vcpkg/installed/x64-mingw-dynamic/include
   OBJECT_DIR = CMakeFiles\ejemplo_mpi.dir\Release
   OBJECT_FILE_DIR = CMakeFiles\ejemplo_mpi.dir\Release
-  TARGET_COMPILE_PDB = CMakeFiles\ejemplo_mpi.dir\Release\
-  TARGET_PDB = Release\ejemplo_mpi.pdb
 
 
 # =============================================================================
@@ -67,12 +65,11 @@ build Release/ejemplo_mpi.exe: CXX_EXECUTABLE_LINKER__ejemplo_mpi_Release CMakeF
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = C:/tools/vcpkg/installed/x64-mingw-dynamic/lib/libfmt.dll.a  C:/oneAPI/mpi/latest/lib/impi.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ejemplo_mpi.dir\Release
-  POST_BUILD = C:\Windows\system32\cmd.exe /C "cd /D C:\tools\prog_paralela\04_ejemplo_mpi\build && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/tools/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/tools/prog_paralela/04_ejemplo_mpi/build/Release/ejemplo_mpi.exe -installedDir C:/tools/vcpkg/installed/x64-mingw-dynamic/bin -OutVariable out"
+  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\tools\prog_paralela\04_ejemplo_mpi\build && C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/tools/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/tools/prog_paralela/04_ejemplo_mpi/build/Release/ejemplo_mpi.exe -installedDir C:/tools/vcpkg/installed/x64-mingw-dynamic/bin -OutVariable out"
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\ejemplo_mpi.dir\Release\
   TARGET_FILE = Release\ejemplo_mpi.exe
   TARGET_IMPLIB = Release\libejemplo_mpi.dll.a
-  TARGET_PDB = Release\ejemplo_mpi.pdb
+  TARGET_PDB = ejemplo_mpi.exe.dbg
 
 build ejemplo_mpi.exe$:Release: phony Release/ejemplo_mpi.exe
 

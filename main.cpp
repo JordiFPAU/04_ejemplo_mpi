@@ -24,7 +24,8 @@ int main(int args, char** argv)
     //while(1<2){
     //}
 
-
+// Finalizar MPI
+//Prueba de commit
     MPI_Finalize();
     return 0;
 }
